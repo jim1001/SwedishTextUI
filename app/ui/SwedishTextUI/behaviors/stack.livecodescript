@@ -1,5 +1,9 @@
 ﻿script "stack Behavior"
 script "stack Behavior"
+on openStack
+   set the textSize of this stack to 20
+   set the textFont of this stack to "droid sans"
+end openStack
 --
 --
 function myHTMLText pText
@@ -15,3 +19,11 @@ function myHTMLText pText
    #   replace return with "<p></p>" in pText
    return pText
 end myHTMLText
+
+function assetsFolder
+   if the environment is "mobile" then
+      return "/sdcard/JimTestAssets"
+   else 
+      return "C:/Users/Jim/Dropbox (The University of Manchester)/JimTestAssets" -- user Jim on home PC
+   end if
+end assetsFolder
